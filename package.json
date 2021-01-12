@@ -1,0 +1,28 @@
+{
+  "name": "nodejsproject",
+  "version": "1.0.0",
+  "description": "My NodejsProject",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnnatanRomeroZapata/Nodejs.git"
+  },
+  "author": "Johnnatan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JohnnatanRomeroZapata/Nodejs/issues"
+  },
+  "homepage": "https://github.com/JohnnatanRomeroZapata/Nodejs#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1"
+  }
+}
