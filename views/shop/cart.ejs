@@ -5,17 +5,27 @@
     <%- include('../includes/navigation.ejs') %>
     <main>
         <% if(hasProducts) { %>
-            <ul>
+            <ul class="cart__item-list">
                 <% products.forEach(p => { %>
-                    <li>
-                        <p><%= p.productData.title %> (<%= p.qty %>)</p>
+                    <li class="cart__item">
+                        <h1><%= p.title %> </h1>
+                        <h2>Quantity: <%= p.cartItem.quantity %> </h2> <!-- cartItem (extra field that gets edited by sequelize to give us access to between table) and quantity is find inside the model cartItemModel -->
                         <form action="/cartDeleteItem" method="POST">
-                            <button class="btn" type="submit">Delete</button>
-                            <input type="hidden" value="<%= p.productData.id %>" name="productId">
+                            <button class="btn danger" type="submit">Delete</button>
+                            <input type="hidden" value="<%= p.id %>" name="productId">
                         </form>
                     </li>
                 <% }) %>
             </ul>
+
+            <br>
+            
+            <div class="centered">
+                <form action="/createOrder" method="POST">
+                    <button type="submit" class="btn">Order Now</button>
+                </form>
+            </div>
+            
         <% } else { %>
             <h1>NO PRODUCTS</h1>
         <% } %>
